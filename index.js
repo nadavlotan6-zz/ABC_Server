@@ -13,7 +13,7 @@ const express = require('express');
 const app = express();
 const server = require('http').createServer(app);
 const io = require('socket.io')(server);
-const port = process.env.PORT || 3000 ;
+const port = process.env.PORT || 5000 ;
 
 
 // Set user first input interaction
@@ -107,8 +107,12 @@ io.on('connection', (socket) => {
 
 // // Set a server connection and listen on 
 // server.listen(port, function () {
-//   console.log("listening on port 3000");
+//   console.log("listening on port 5000");
 // });
+
+app.get('/', () => {
+  console.log('GET!');
+});
 
 app.set('port', (process.env.PORT || 5000));
 
