@@ -113,10 +113,11 @@ function startServer() {
 // });
 
 app.get('/', function (request, response) {
+
   startServer();
 });
 
-app.set('port', (process.env.PORT || 5000));
+app.set('port', (5000 || process.env.PORT));
 
 app.listen(app.get('port'), function () {
   console.log('Node app is running on port', app.get('port'))
