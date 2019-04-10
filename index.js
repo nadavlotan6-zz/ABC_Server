@@ -105,7 +105,13 @@ io.on('connection', (socket) => {
   })
 });
 
-// Set a server connection and listen on 
-server.listen(port, function () {
-  console.log("listening on port 3000");
+// // Set a server connection and listen on 
+// server.listen(port, function () {
+//   console.log("listening on port 3000");
+// });
+
+app.set('port', (process.env.PORT || 5000));
+
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'))
 });
